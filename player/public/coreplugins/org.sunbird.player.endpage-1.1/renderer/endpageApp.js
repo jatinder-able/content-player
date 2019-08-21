@@ -9,6 +9,7 @@ endPage.controller("endPageController", function($scope, $rootScope, $state,$ele
     $scope.replayIcon;
     $scope.userScore = undefined;
     $scope.totalScore = undefined;
+    $scope.displayUser = localStorage.getItem("currentUser") || "Guest";
     /**
      * @property - {Object} which holds previous content of current content
      */     
