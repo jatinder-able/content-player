@@ -17,7 +17,8 @@ Plugin.extend({
                             EkstepRendererAPI.hideEndPage()
                             var stageId = !_.isUndefined(Renderer) ? Renderer.theme._currentStage : " "
                             TelemetryService.interact("TOUCH", "gc_genie", "TOUCH", { stageId: stageId })
-                            exitApp()
+                            //exitApp()
+                            alert("exit");
                         }
                     }
                 }
