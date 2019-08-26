@@ -26,6 +26,9 @@ Plugin.extend({
                             alert(renderer_btn)
                             renderer_btn[0].style.setProperty("background-color", "red", "important")
                             renderer_btn[0].style.fontSize = "large"
+                            setTimeout(() => {
+                                renderer_btn[0].click()
+                            }, 2000);
                         }
                     }
                 }
