@@ -18,17 +18,9 @@ Plugin.extend({
                             var stageId = !_.isUndefined(Renderer) ? Renderer.theme._currentStage : " "
                             TelemetryService.interact("TOUCH", "gc_genie", "TOUCH", { stageId: stageId })
                             //exitApp()
-                            alert("exit-clicked")
-                            alert(window.parent)
                             var renderer = window.parent.document.getElementById("app-player-collection-renderer")
-                            alert(renderer)
                             var renderer_btn = renderer.getElementsByTagName("h5")
-                            alert(renderer_btn)
-                            renderer_btn[0].style.setProperty("background-color", "red", "important")
-                            renderer_btn[0].style.fontSize = "large"
-                            setTimeout(function() {
-                                renderer_btn[0].click()
-                            }, 2000)
+                            renderer_btn[0].click()
                         }
                     }
                 }
