@@ -19,9 +19,11 @@ Plugin.extend({
                             TelemetryService.interact("TOUCH", "gc_genie", "TOUCH", { stageId: stageId })
                             //exitApp()
                             alert("exit-clicked")
-                            var renderer = document.getElementById("app-player-collection-renderer")
+                            alert(window.parent)
+                            var renderer = window.parent.document.getElementById("app-player-collection-renderer")
+                            alert(renderer)
                             var renderer_btn = renderer.getElementsByTagName("h5")
-                            console.log("jay", renderer_btn)
+                            alert(renderer_btn)
                             renderer_btn[0].style.setProperty("background-color", "red", "important")
                             renderer_btn[0].style.fontSize = "large"
                         }
