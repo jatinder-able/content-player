@@ -82,7 +82,10 @@ endPage.controller("endPageController", function($scope, $rootScope, $state,$ele
         }
     };
     $scope.openGenie = function(){
-        EkstepRendererAPI.dispatchEvent('renderer:genie:click');
+        //EkstepRendererAPI.dispatchEvent('renderer:genie:click');
+        var renderer = window.parent.document.getElementById("app-player-collection-renderer")
+        var renderer_btn = renderer.getElementsByTagName("h5")
+        renderer_btn[0].click()
     };
     
     $scope.handleEndpage = function() {
