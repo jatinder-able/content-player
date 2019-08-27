@@ -239,7 +239,7 @@ app.controllerProvider.register("OverlayController", function($scope, $rootScope
 app.compileProvider.directive('mute', function($rootScope) {
     return {
         restrict: 'E',
-        template: '<div ng-click="toggleMute()"><img ng-src="{{muteImg}}"/><span>Mute {{AppLables.mute}} </span></div>',
+        template: '<div ng-click="toggleMute()"><img class="gc-menu-icon-pointer" ng-src="{{muteImg}}"/><span>Sound {{AppLables.mute}} </span></div>',
         link: function(scope, url) {
 
             /**

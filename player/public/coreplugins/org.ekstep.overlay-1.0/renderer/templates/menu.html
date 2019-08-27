@@ -14,12 +14,12 @@
         </div>
         <div class = "gc-menu-options">
             <div ng-click="replayContent()">
-                <img ng-src="{{imageBasePath}}icn_replay.png"/>
+                <img class="gc-menu-icon-pointer" ng-src="{{imageBasePath}}icn_replay.png"/>
                 <span> {{AppLables.replay}} </span>
             </div>
         </div>
         <div ng-if="showUser" ng-click="openUserSwitchingModal()" class = "gc-menu-options profile">
-            <img alt="prof img" ng-src="{{imageBasePath}}avatar_anonymous.png"/>
+            <img class="gc-menu-icon-pointer" alt="prof img" ng-src="{{imageBasePath}}avatar_anonymous.png"/>
             <span class="menu-text"> {{currentUser.handle}} <br/> <small> {{AppLables.change}} </small></span>
         </div>
         <div class = "gc-menu-options">

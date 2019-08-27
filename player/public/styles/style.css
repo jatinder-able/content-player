@@ -400,6 +400,10 @@ ion-popover-view.fit ion-content {
     width: 50%;
 }
 
+.gc-menu-icon-pointer {
+    cursor: pointer;
+}
+
 .inst-message-cont {
     background-color: #ECECEC;
     position: absolute;
