@@ -20,7 +20,8 @@ AppConfig = {
 	whiteListUrl: [
 		'self',
 		'https://*.blob.core.windows.net/**',
-		'https://ekstep-public-*.s3-ap-south-1.amazonaws.com/**'
+		'https://ekstep-public-*.s3-ap-south-1.amazonaws.com/**',
+		'https://pwc114.blob.core.windows.net/**'
 	],
 	defaultMetadata: {
 		"identifier": "org.ekstep.item.sample",
