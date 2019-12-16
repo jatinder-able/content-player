@@ -163,7 +163,6 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         // pdfCanvas.style.transform = 'scale(0.5)';
         pdfCanvas.style.display = 'block';
         pdfCanvas.style.margin = '0 auto';
-        pdfCanvas.style.width = '38%';
 
         var pageLoader = document.createElement("div");
         pageLoader.id = "page-loader";
@@ -199,22 +198,22 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         $("#pdf-search-container").on('click','#able-pdf-zoomin',function() {
             if(adblePDFCurrentWidth < 98) {
                 var zoomSize = adblePDFCurrentWidth + adblePDFScaleFactor;
-                $("#pdfCanvas").width(adblePDFCurrentWidth+'%');
+                $("#pdf-canvas").width(zoomSize+'%');
                 adblePDFCurrentWidth = zoomSize;
                 console.log("Krish");
                 console.log(adblePDFCurrentWidth);
-                console.log($("#pdfCanvas").width());
+                console.log($("#pdf-canvas").width());
             }
             disableIcons();
         });
         $("#pdf-search-container").on('click','#able-pdf-zoomout',function() {
             if(adblePDFCurrentWidth > 38) {
                 var zoomSize = adblePDFCurrentWidth - adblePDFScaleFactor;
-                $("#pdfCanvas").width(adblePDFCurrentWidth+'%');
+                $("#pdf-canvas").width(zoomSize+'%');
                 adblePDFCurrentWidth = zoomSize;
                 console.log("Krish");
                 console.log(adblePDFCurrentWidth);
-                console.log($("#pdfCanvas").width());
+                console.log($("#pdf-canvas").width());
             }
             disableIcons();
         });
