@@ -158,9 +158,12 @@ org.ekstep.contentrenderer.baseLauncher.extend({
 
         var pdfCanvas = document.createElement("canvas");
         pdfCanvas.id = "pdf-canvas";
-        pdfCanvas.width = "700";
-        pdfCanvas.style = "maxHeight:100px";
-        pdfCanvas.style.transform = 'scale(0.5)';
+        // pdfCanvas.width = "700";
+        // pdfCanvas.style = "maxHeight:100px";
+        // pdfCanvas.style.transform = 'scale(0.5)';
+        pdfCanvas.style.display = 'block';
+        pdfCanvas.style.margin = '0 auto';
+        pdfCanvas.style.width = '37.6%';
 
         var pageLoader = document.createElement("div");
         pageLoader.id = "page-loader";
