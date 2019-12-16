@@ -198,7 +198,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         var adblePDFScaleFactor = 20;
         $("#pdf-search-container").on('click','#able-pdf-zoomin',function() {
             if(adblePDFCurrentWidth < 98) {
-                const zoomSize = adblePDFCurrentWidth + adblePDFScaleFactor;
+                var zoomSize = adblePDFCurrentWidth + adblePDFScaleFactor;
                 $("#pdfCanvas").width(adblePDFCurrentWidth+'%');
                 adblePDFCurrentWidth = zoomSize;
                 console.log("Krish");
@@ -209,7 +209,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         });
         $("#pdf-search-container").on('click','#able-pdf-zoomout',function() {
             if(adblePDFCurrentWidth > 38) {
-                const zoomSize = adblePDFCurrentWidth - adblePDFScaleFactor;
+                var zoomSize = adblePDFCurrentWidth - adblePDFScaleFactor;
                 $("#pdfCanvas").width(adblePDFCurrentWidth+'%');
                 adblePDFCurrentWidth = zoomSize;
                 console.log("Krish");
