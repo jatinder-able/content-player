@@ -163,7 +163,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         // pdfCanvas.style.transform = 'scale(0.5)';
         pdfCanvas.style.display = 'block';
         pdfCanvas.style.margin = '0 auto';
-        pdfCanvas.style.width = '37.6%';
+        pdfCanvas.style.width = '38%';
 
         var pageLoader = document.createElement("div");
         pageLoader.id = "page-loader";
@@ -192,6 +192,15 @@ org.ekstep.contentrenderer.baseLauncher.extend({
 
         console.log("CANVAS", context.CANVAS);
 
+        // Add Zoom-in and Zoom-out Icons into the toolbar
+        $("#pdf-search-container").append("<span id='able-pdf-zoomin'><img src='assets/zoom-in.png'></span><span id='able-pdf-zoomout'><img src='assets/zoom-out.png'></span>");
+        $("#pdf-search-container").on('click','#able-pdf-zoomin',function() {
+            console.log("Zoom in...");
+        });
+        $("#pdf-search-container").on('click','#able-pdf-zoomout',function() {
+            console.log("Zoom out...");
+        });
+        // Add Zoom-in and Zoom-out Icons into the toolbar
         $("#pdf-find").on('click', function() {
             var searchText = document.getElementById("pdf-find-text");
             console.log("SEARCH TEXT", searchText.value);
