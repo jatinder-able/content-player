@@ -117,3 +117,13 @@
     margin-bottom: -3%;
     cursor: pointer;
 }
+
+#able-pdf-zoomin img, #able-pdf-zoomout img {
+    width: 35px;
+    vertical-align: text-bottom;
+    margin-left:20px;
+    cursor: pointer;
+}
+#able-pdf-zoomin img.disabled, #able-pdf-zoomout img.disabled {
+    cursor: not-allowed;
+}
