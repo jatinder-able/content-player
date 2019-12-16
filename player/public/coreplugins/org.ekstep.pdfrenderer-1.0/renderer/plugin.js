@@ -193,28 +193,36 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         console.log("CANVAS", context.CANVAS);
 
         // Add Zoom-in and Zoom-out Icons into the toolbar
-        $("#pdf-search-container").append("<span id='able-pdf-zoomin'><img src='assets/zoom-in.png'></span><span id='able-pdf-zoomout'><img src='assets/zoom-out.png'></span>");
+        $("#pdf-search-container").append("<span id='able-pdf-zoomin'><img src='assets/zoom-in.png'></span><span id='able-pdf-zoomout'><img src='assets/zoom-out.png' style='margin-left:10px;'></span>");
         var adblePDFCurrentWidth = $("#pdfCanvas").width();
         var adblePDFScaleFactor = 20;
         if(adblePDFCurrentWidth <= 38) {
             $("#able-pdf-zoomout").addClass('disabled');
         }
+        console.log("adblePDFCurrentWidth"+adblePDFCurrentWidth);
         $("#pdf-search-container").on('click','#able-pdf-zoomin',function() {
             if(adblePDFCurrentWidth < 98) {
+                console.log("Test");
                 adblePDFCurrentWidth += adblePDFScaleFactor;
                 $("#pdfCanvas").css({'width:':adblePDFCurrentWidth +'%'});
             } else {
                 $("#able-pdf-zoomout").addClass('disabled');                
             }
+            disableIcons();
         });
         $("#pdf-search-container").on('click','#able-pdf-zoomout',function() {
             if(adblePDFCurrentWidth > 38) {
+                console.log("Test1");
                 adblePDFCurrentWidth -= adblePDFScaleFactor;
                 $("#pdfCanvas").css({'width:':adblePDFCurrentWidth +'%'});
             } else {
                 $("#able-pdf-zoomout").addClass('disabled');                
             }
+            disableIcons();
         });
+        function disableIcons() {
+            console.log("disableIcons");
+        }
         // Add Zoom-in and Zoom-out Icons into the toolbar
         $("#pdf-find").on('click', function() {
             var searchText = document.getElementById("pdf-find-text");

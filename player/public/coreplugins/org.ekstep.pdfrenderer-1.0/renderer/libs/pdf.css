@@ -119,8 +119,8 @@
 }
 
 #able-pdf-zoomin img, #able-pdf-zoomout img {
-    width: 35px;
-    vertical-align: text-bottom;
+    width: 28px;
+    vertical-align: middle;
     margin-left:20px;
     cursor: pointer;
 }
