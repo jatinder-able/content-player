@@ -196,20 +196,26 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         $("#pdf-search-container").append("<span id='able-pdf-zoomin'><img src='assets/zoom-in.png'></span><span id='able-pdf-zoomout'><img src='assets/zoom-out.png' style='margin-left:10px;'></span>");
         var adblePDFCurrentWidth = 38;
         var adblePDFScaleFactor = 20;
-        if(adblePDFCurrentWidth <= 38) {
-            $("#able-pdf-zoomout").addClass('disabled');
-        }
+        $("#able-pdf-zoomout").addClass('disabled');
         $("#pdf-search-container").on('click','#able-pdf-zoomin',function() {
             if(adblePDFCurrentWidth < 98) {
-                adblePDFCurrentWidth += adblePDFScaleFactor;
-                $("#pdfCanvas").css({'width:':adblePDFCurrentWidth +'%'});
+                let zoomSize = adblePDFCurrentWidth + adblePDFScaleFactor;
+                $("#pdfCanvas").width(adblePDFCurrentWidth+'%');
+                adblePDFCurrentWidth = zoomSize;
+                console.log("Krish");
+                console.log(adblePDFCurrentWidth);
+                console.log($("#pdfCanvas").width());
             }
             disableIcons();
         });
         $("#pdf-search-container").on('click','#able-pdf-zoomout',function() {
             if(adblePDFCurrentWidth > 38) {
-                adblePDFCurrentWidth -= adblePDFScaleFactor;
-                $("#pdfCanvas").css({'width:':adblePDFCurrentWidth +'%'});
+                let zoomSize = adblePDFCurrentWidth - adblePDFScaleFactor;
+                $("#pdfCanvas").width(adblePDFCurrentWidth+'%');
+                adblePDFCurrentWidth = zoomSize;
+                console.log("Krish");
+                console.log(adblePDFCurrentWidth);
+                console.log($("#pdfCanvas").width());
             }
             disableIcons();
         });
