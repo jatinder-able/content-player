@@ -92,6 +92,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
 
         var pdfContents = document.createElement("div");
         pdfContents.id = "pdf-contents";
+        pdfContents.style.backgroundColor = '#757575';
 
         var pdfMetaData = document.createElement("div");
         pdfMetaData.id = "pdf-meta";
@@ -159,6 +160,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         pdfCanvas.id = "pdf-canvas";
         pdfCanvas.width = "700";
         pdfCanvas.style = "maxHeight:100px";
+        pdfCanvas.style.transform = 'scale(0.5)';
 
         var pageLoader = document.createElement("div");
         pageLoader.id = "page-loader";
