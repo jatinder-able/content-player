@@ -228,6 +228,11 @@ org.ekstep.contentrenderer.baseLauncher.extend({
             }
             $(this).hide().prev('span').show();
         });
+        $(document).on('keydown',function(e) {
+            if(e.keyCode === 27) {
+                $("#pdf-fullscreen-container").find("#able-exit-fullscreen").click();
+            }
+        });
         // Full Screen Icon Added
 
         // Add Zoom-in and Zoom-out Icons into the toolbar
@@ -400,6 +405,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
             // While page is being rendered hide the canvas and show a loading message
             $("#pdf-canvas").hide();
             $("#pdf-no-page").hide();
+            $("#pdf-fullscreen-container").hide();
             $("#page-loader").show();
 
             // Update current page in HTML
@@ -431,6 +437,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
 
                     // Show the canvas and hide the page loader
                     $("#pdf-canvas").show();
+                    $("#pdf-fullscreen-container").show();
                     $("#page-loader").hide();
  
                     instance.logImpressionEvent(navigateStageId, navigateStageTo);

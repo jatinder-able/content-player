@@ -50,47 +50,6 @@
     <div class="content-holder" ng-repeat="template in templates">
         <div ng-include="template.path || template.id"></div>
     </div>
-    <!-- <div style="right: 30px;bottom: 30px;position: absolute;">
-        <span title="Full Screen" id="fullscreen" style="cursor: pointer;" onclick="openFullscreen();">
-            <img src='./assets/fullscreen.png' style="width: 50px;">
-        </span>
-        <span title="Exit Full Screen" id="exit-fullscreen" style="cursor: pointer;" onclick="closeFullscreen();">
-            <img src='./assets/exit-fullscreen.png' style="width: 50px;">
-        </span>
-    </div> -->
-    <!-- <script>
-
-        var elem = document.documentElement;
-        var fullscreen = document.getElementById("fullscreen");
-        var exitFullscreen = document.getElementById("exit-fullscreen");
-        exitFullscreen.style.display = 'none';
-        function openFullscreen() {
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { /* Firefox */
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                elem.msRequestFullscreen();
-            }
-            fullscreen.style.display = 'none';
-            exitFullscreen.style.display = 'block';
-        }
-        function closeFullscreen() {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-            exitFullscreen.style.display = 'none';
-            fullscreen.style.display = 'block';
-        }
-    </script> -->
     <!-- injector:js -->
     <script type="text/javascript" src="libs/jquery.min.js"></script>
     <script type="text/javascript" src="libs/jquery.easing.1.3.js"></script>
