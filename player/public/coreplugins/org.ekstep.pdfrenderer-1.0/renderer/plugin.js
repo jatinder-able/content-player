@@ -193,12 +193,12 @@ org.ekstep.contentrenderer.baseLauncher.extend({
 
         // Add Zoom-in and Zoom-out Icons into the toolbar
         $("#pdf-search-container").append("<span id='able-pdf-zoomin'><img src='assets/zoom-in.png'></span><span id='able-pdf-zoomout'><img class='disabled' src='assets/zoom-out.png' style='margin-left:10px;'></span>");
-        var adblePDFCurrentWidth = $("#pdf-canvas").width();
+        var adblePDFCurrentWidth = 38;
         var adblePDFScaleFactor = 15;
         $("#pdf-search-container").on('click','#able-pdf-zoomin',function() {
             if(adblePDFCurrentWidth < 98) {
                 adblePDFCurrentWidth += adblePDFScaleFactor;
-                $("#pdf-canvas").width(adblePDFCurrentWidth+'%');
+                $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
                 console.log("Krish");
                 console.log(adblePDFCurrentWidth);
                 console.log($("#pdf-canvas").width());
@@ -208,7 +208,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         $("#pdf-search-container").on('click','#able-pdf-zoomout',function() {
             if(adblePDFCurrentWidth >= 38) {
                 adblePDFCurrentWidth -= adblePDFScaleFactor;
-                $("#pdf-canvas").width(adblePDFCurrentWidth+'%');
+                $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
                 console.log("Krish");
                 console.log(adblePDFCurrentWidth);
                 console.log($("#pdf-canvas").width());
