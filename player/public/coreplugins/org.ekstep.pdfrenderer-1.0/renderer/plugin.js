@@ -229,6 +229,8 @@ org.ekstep.contentrenderer.baseLauncher.extend({
             $(this).hide().prev('span').show();
         });
         $(document).on('keydown',function(e) {
+            console.log("Escape Button");
+            console.log(e);
             if(e.keyCode === 27) {
                 $("#pdf-fullscreen-container").find("#able-exit-fullscreen").click();
             }
