@@ -228,23 +228,29 @@ org.ekstep.contentrenderer.baseLauncher.extend({
             }
             $(this).hide().prev('span').show();
         });
-        $(document).keydown(function() {
-            console.log("Keydown Event");
+        document.addEventListener("fullscreenchange", function() {
+            $("#able-exit-fullscreen").hide().prev('span').show();
+          });
+        document.addEventListener("mozfullscreenchange", function() {
+            $("#able-exit-fullscreen").hide().prev('span').show();
         });
-        $(document).keypress(function() {
-            console.log("Keypress Event");
+        document.addEventListener("webkitfullscreenchange", function() {
+            $("#able-exit-fullscreen").hide().prev('span').show();
         });
-        document.addEventListener("keydown", closeFullScreen, false);
-        document.documentElement.addEventListener("keydown", closeFullScreen, false);
-        document.addEventListener("keypress", closeFullScreen, false);
-        document.documentElement.addEventListener("keypress", closeFullScreen, false);
-        function closeFullScreen(e) {
-            console.log("Escape Button");
-            console.log(e);
-            if(e.keyCode === 27) {
-                $("#pdf-fullscreen-container").find("#able-exit-fullscreen").click();
-            }
-        }
+        document.addEventListener("msfullscreenchange", function() {
+            $("#able-exit-fullscreen").hide().prev('span').show();
+        });
+        // $(document).keydown(function() {
+        //     console.log("Keydown Event");
+        // });
+        // document.addEventListener("keydown", closeFullScreen, false);
+        // function closeFullScreen(e) {
+        //     console.log("Escape Button");
+        //     console.log(e);
+        //     if(e.keyCode === 27) {
+        //         $("#pdf-fullscreen-container").find("#able-exit-fullscreen").click();
+        //     }
+        // }
         // Full Screen Icon Added
 
         // Add Zoom-in and Zoom-out Icons into the toolbar
