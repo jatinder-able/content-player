@@ -83,7 +83,6 @@ const APP_SCRIPTS = [
     './public/js/content-renderer.js',
     './public/js/baseLauncher.js',
     './public/js/baseEndpage.js',
-    './public/js/full-screen.js',
     './public/services/controllerservice.js',
     './public/js/ekstepRendererEvents.js',
     './public/js/iEvaluator.js',

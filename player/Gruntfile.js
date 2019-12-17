@@ -84,7 +84,6 @@ module.exports = function (grunt) {
 					"public/js/content-renderer.js",
 					"public/js/baseLauncher.js",
 					"public/js/baseEndpage.js",
-					"public/js/full-screen.js",
 					"public/services/controllerservice.js",
 					"public/js/detectClient.js",
 					"public/js/ekstepRendererEvents.js",
