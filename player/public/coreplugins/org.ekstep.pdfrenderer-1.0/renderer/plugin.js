@@ -82,6 +82,9 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         var pdfMainContainer = document.createElement("div");
         pdfMainContainer.id = "pdf-main-container";
 
+        var pdfFullScreenContainer = document.createElement("div");
+        pdfFullScreenContainer.id = "pdf-fullscreen-container"
+
         var pdfLoader = document.createElement("div");
         pdfLoader.id = "pdf-loader";
         pdfLoader.textContent = "Loading document ...";
@@ -176,6 +179,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
 
         pdfMainContainer.appendChild(pdfLoader);
         pdfMainContainer.appendChild(pdfContents);
+        pdfMainContainer.appendChild(pdfFullScreenContainer);
 
 
         canvasContainer.appendChild(pdfMainContainer);
@@ -191,8 +195,51 @@ org.ekstep.contentrenderer.baseLauncher.extend({
 
         console.log("CANVAS", context.CANVAS);
 
+
+        // Full Screen Icon Added
+        $("#pdf-fullscreen-container").html('<span title="Full Screen" id="able-fullscreen">' +
+                                                '<img src="./assets/fullscreen.png">' +
+                                            '</span>' +
+                                            '<span title="Exit Full Screen" id="able-exit-fullscreen">' +
+                                                '<img src="./assets/exit-fullscreen.png">' +
+                                            '</span>');
+        var elem = document.documentElement;
+        $("#pdf-fullscreen-container").on('click','#able-fullscreen',function() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                elem.msRequestFullscreen();
+            }
+            $(this).hide().next('span').show();
+        });
+        $("#pdf-fullscreen-container").on('click','#able-exit-fullscreen',function() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            $(this).hide().prev('span').show();
+        });
+        // Full Screen Icon Added
+
         // Add Zoom-in and Zoom-out Icons into the toolbar
-        $("#pdf-search-container").append("<span title='Zoom in' id='able-pdf-zoomin'><img src='assets/zoom-in.png'></span><span title='Zoom out' id='able-pdf-zoomout'><img class='disabled' src='assets/zoom-out.png' style='margin-left:10px;'></span><span title='Reset zoom' id='able-pdf-reset-zoom'><img class='disabled' src='assets/reset-zoom.png' style='margin-left:10px;'></span>");
+        $("#pdf-search-container").append("<span title='Zoom in' id='able-pdf-zoomin'>" +
+                                                "<img src='assets/zoom-in.png'>" +
+                                            "</span>" +
+                                            "<span title='Zoom out' id='able-pdf-zoomout'>" +
+                                                "<img class='disabled' src='assets/zoom-out.png' style='margin-left:10px;'>" +
+                                            "</span>" +
+                                            "<span title='Reset zoom' id='able-pdf-reset-zoom'>" +
+                                                "<img class='disabled' src='assets/reset-zoom.png' style='margin-left:10px;'>" +
+                                            "</span>");
         var adblePDFCurrentWidth = 38;
         var adblePDFScaleFactor = 15;
         $("#pdf-search-container").on('click','#able-pdf-zoomin',function() {

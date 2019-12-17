@@ -128,3 +128,17 @@
 #able-pdf-zoomin img.disabled, #able-pdf-zoomout img.disabled, #able-pdf-reset-zoom img.disabled {
     cursor: not-allowed;
 }
+#pdf-fullscreen-container {
+    right: 30px;
+    bottom: 30px;
+    position: absolute;
+}
+#pdf-fullscreen-container span {
+    cursor: pointer;
+}
+#pdf-fullscreen-container span img {
+    width: 50px;
+}
+#able-exit-fullscreen {
+    display: none;
+}
