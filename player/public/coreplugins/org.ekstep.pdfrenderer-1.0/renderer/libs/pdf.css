@@ -119,12 +119,12 @@
     cursor: pointer;
 }
 
-#able-pdf-zoomin img, #able-pdf-zoomout img {
+#able-pdf-zoomin img, #able-pdf-zoomout img, #able-pdf-reset-zoom img {
     width: 28px;
     vertical-align: middle;
     margin-left:20px;
     cursor: pointer;
 }
-#able-pdf-zoomin img.disabled, #able-pdf-zoomout img.disabled {
+#able-pdf-zoomin img.disabled, #able-pdf-zoomout img.disabled, #able-pdf-reset-zoom img.disabled {
     cursor: not-allowed;
 }

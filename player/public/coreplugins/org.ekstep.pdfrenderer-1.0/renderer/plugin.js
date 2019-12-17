@@ -209,6 +209,13 @@ org.ekstep.contentrenderer.baseLauncher.extend({
             }
             disableIcons();
         });
+        $("#pdf-search-container").on('click','#able-pdf-reset-zoom',function() {
+            if(adblePDFCurrentWidth > 38) {
+                adblePDFCurrentWidth = 38;
+                $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
+            }
+            disableIcons();
+        });
         function disableIcons() {
             if(adblePDFCurrentWidth > 38) {
                 $("#able-pdf-reset-zoom img").removeClass('disabled');
