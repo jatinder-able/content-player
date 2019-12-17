@@ -228,13 +228,14 @@ org.ekstep.contentrenderer.baseLauncher.extend({
             }
             $(this).hide().prev('span').show();
         });
-        $(document).on('keydown',function(e) {
+        document.addEventListener("keydown", closeFullScreen, false);
+        function closeFullScreen(e) {
             console.log("Escape Button");
             console.log(e);
             if(e.keyCode === 27) {
                 $("#pdf-fullscreen-container").find("#able-exit-fullscreen").click();
             }
-        });
+        }
         // Full Screen Icon Added
 
         // Add Zoom-in and Zoom-out Icons into the toolbar
