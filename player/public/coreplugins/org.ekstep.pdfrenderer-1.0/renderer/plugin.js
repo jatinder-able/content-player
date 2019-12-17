@@ -192,30 +192,29 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         console.log("CANVAS", context.CANVAS);
 
         // Add Zoom-in and Zoom-out Icons into the toolbar
-        $("#pdf-search-container").append("<span id='able-pdf-zoomin'><img src='assets/zoom-in.png'></span><span id='able-pdf-zoomout'><img class='disabled' src='assets/zoom-out.png' style='margin-left:10px;'></span>");
+        $("#pdf-search-container").append("<span title='Zoom in' id='able-pdf-zoomin'><img src='assets/zoom-in.png'></span><span title='Zoom out' id='able-pdf-zoomout'><img class='disabled' src='assets/zoom-out.png' style='margin-left:10px;'></span><span title='Reset zoom' id='able-pdf-reset-zoom'><img class='disabled' src='assets/reset-zoom.png' style='margin-left:10px;'></span>");
         var adblePDFCurrentWidth = 38;
         var adblePDFScaleFactor = 15;
         $("#pdf-search-container").on('click','#able-pdf-zoomin',function() {
             if(adblePDFCurrentWidth < 98) {
                 adblePDFCurrentWidth += adblePDFScaleFactor;
                 $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
-                console.log("Krish");
-                console.log(adblePDFCurrentWidth);
-                console.log($("#pdf-canvas").width());
             }
             disableIcons();
         });
         $("#pdf-search-container").on('click','#able-pdf-zoomout',function() {
-            if(adblePDFCurrentWidth >= 38) {
+            if(adblePDFCurrentWidth > 38) {
                 adblePDFCurrentWidth -= adblePDFScaleFactor;
                 $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
-                console.log("Krish");
-                console.log(adblePDFCurrentWidth);
-                console.log($("#pdf-canvas").width());
             }
             disableIcons();
         });
         function disableIcons() {
+            if(adblePDFCurrentWidth > 38) {
+                $("#able-pdf-reset-zoom img").removeClass('disabled');
+            } else {
+                $("#able-pdf-reset-zoom img").addClass('disabled');
+            }
             if(adblePDFCurrentWidth === 38) {
                 $("#able-pdf-zoomout img").addClass('disabled');
             } else {
