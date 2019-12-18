@@ -32,6 +32,45 @@
          jQuery(this.manifest.id).remove();
          var iframe = document.createElement('iframe');
          iframe.src = path;
+         iframe.id = "able-html-renderer";
+         $('#able-html-renderer').contents().find('body').append('<div id="pdf-fullscreen-container">'+
+                                                                     '<span title="Full Screen" id="able-fullscreen">' +
+                                                                            '<img src="./assets/fullscreen.png">' +
+                                                                        '</span>' +
+                                                                        '<span title="Exit Full Screen" id="able-exit-fullscreen">' +
+                                                                            '<img src="./assets/exit-fullscreen.png">' +
+                                                                        '</span>'+
+                                                                 '</div>');
+        var elem = document.documentElement;
+        console.log("Full Screen for html zip");
+        console.log($('#able-html-renderer').contents());
+        console.log($('#able-html-renderer').contents());
+        console.log($('#able-html-renderer').contents().find('#pdf-fullscreen-container'));
+        $('#able-html-renderer').contents().find('#pdf-fullscreen-container').on('click','#able-fullscreen',function() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                elem.msRequestFullscreen();
+            }
+            $(this).hide().next('span').show();
+        });
+        $('#able-html-renderer').contents().find('#pdf-fullscreen-container').on('click','#able-exit-fullscreen',function() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            $(this).hide().prev('span').show();
+        });
+
          this.validateSrc(path, iframe);
      },
      validateSrc: function(path, iframe) {
