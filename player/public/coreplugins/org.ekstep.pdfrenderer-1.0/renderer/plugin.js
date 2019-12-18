@@ -228,18 +228,20 @@ org.ekstep.contentrenderer.baseLauncher.extend({
             }
             $(this).hide().prev('span').show();
         });
-        document.addEventListener("fullscreenchange", function() {
-            $("#able-exit-fullscreen").hide().prev('span').show();
-          });
-        document.addEventListener("mozfullscreenchange", function() {
-            $("#able-exit-fullscreen").hide().prev('span').show();
-        });
-        document.addEventListener("webkitfullscreenchange", function() {
-            $("#able-exit-fullscreen").hide().prev('span').show();
-        });
-        document.addEventListener("msfullscreenchange", function() {
-            $("#able-exit-fullscreen").hide().prev('span').show();
-        });
+        if($("#able-exit-fullscreen").is(":visible")) {
+            document.addEventListener("fullscreenchange", function() {
+                $("#able-exit-fullscreen").hide().prev('span').show();
+            });
+            document.addEventListener("mozfullscreenchange", function() {
+                $("#able-exit-fullscreen").hide().prev('span').show();
+            });
+            document.addEventListener("webkitfullscreenchange", function() {
+                $("#able-exit-fullscreen").hide().prev('span').show();
+            });
+            document.addEventListener("msfullscreenchange", function() {
+                $("#able-exit-fullscreen").hide().prev('span').show();
+            });
+        }
         // $(document).keydown(function() {
         //     console.log("Keydown Event");
         // });
