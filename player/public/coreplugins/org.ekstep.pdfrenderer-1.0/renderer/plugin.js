@@ -79,121 +79,121 @@ org.ekstep.contentrenderer.baseLauncher.extend({
     },
     renderPDF: function(path, canvasContainer) {
         EkstepRendererAPI.dispatchEvent("renderer:splash:hide");
-        var pdfMainContainer = document.createElement("div");
-        pdfMainContainer.id = "pdf-main-container";
+        // var pdfMainContainer = document.createElement("div");
+        // pdfMainContainer.id = "pdf-main-container";
 
-        var pdfFullScreenContainer = document.createElement("div");
-        pdfFullScreenContainer.id = "pdf-fullscreen-container"
+        // var pdfFullScreenContainer = document.createElement("div");
+        // pdfFullScreenContainer.id = "pdf-fullscreen-container"
 
-        var pdfLoader = document.createElement("div");
-        pdfLoader.id = "pdf-loader";
-        pdfLoader.textContent = "Loading document ...";
+        // var pdfLoader = document.createElement("div");
+        // pdfLoader.id = "pdf-loader";
+        // pdfLoader.textContent = "Loading document ...";
 
-        var pdfNoPage = document.createElement("div");
-        pdfNoPage.id = "pdf-no-page";
-        pdfNoPage.textContent = "No Page Found";
+        // var pdfNoPage = document.createElement("div");
+        // pdfNoPage.id = "pdf-no-page";
+        // pdfNoPage.textContent = "No Page Found";
 
-        var pdfContents = document.createElement("div");
-        pdfContents.id = "pdf-contents";
-        pdfContents.style.backgroundColor = '#757575';
+        // var pdfContents = document.createElement("div");
+        // pdfContents.id = "pdf-contents";
+        // pdfContents.style.backgroundColor = '#757575';
 
-        var pdfMetaData = document.createElement("div");
-        pdfMetaData.id = "pdf-meta";
+        // var pdfMetaData = document.createElement("div");
+        // pdfMetaData.id = "pdf-meta";
 
-        var pdfButtons = document.createElement("div");
-        pdfButtons.id = "pdf-buttons";
+        // var pdfButtons = document.createElement("div");
+        // pdfButtons.id = "pdf-buttons";
 
-        var pdfPrevButton = document.createElement("button");
-        pdfPrevButton.id = "pdf-prev";
-        pdfPrevButton.textContent = "Previous";
+        // var pdfPrevButton = document.createElement("button");
+        // pdfPrevButton.id = "pdf-prev";
+        // pdfPrevButton.textContent = "Previous";
 
-        var pdfNextButton = document.createElement("button");
-        pdfNextButton.id = "pdf-next";
-        pdfNextButton.textContent = "Next";
+        // var pdfNextButton = document.createElement("button");
+        // pdfNextButton.id = "pdf-next";
+        // pdfNextButton.textContent = "Next";
 
-        var pdfSearchContainer = document.createElement("div");
-        pdfSearchContainer.id = "pdf-search-container";
+        // var pdfSearchContainer = document.createElement("div");
+        // pdfSearchContainer.id = "pdf-search-container";
 
-        var findTextField = document.createElement("input");
-        findTextField.type = "number";
-        findTextField.id = "pdf-find-text";
-        findTextField.placeholder = "Enter page number";
-        findTextField.min = 1;
+        // var findTextField = document.createElement("input");
+        // findTextField.type = "number";
+        // findTextField.id = "pdf-find-text";
+        // findTextField.placeholder = "Enter page number";
+        // findTextField.min = 1;
 
-        var findSubmit = document.createElement("button");
-        findSubmit.id = "pdf-find";
-        findSubmit.textContent = "Go";
+        // var findSubmit = document.createElement("button");
+        // findSubmit.id = "pdf-find";
+        // findSubmit.textContent = "Go";
 
-        pdfSearchContainer.appendChild(findTextField);
-        pdfSearchContainer.appendChild(findSubmit);
+        // pdfSearchContainer.appendChild(findTextField);
+        // pdfSearchContainer.appendChild(findSubmit);
 
-        if (!window.cordova){
-            this.addDownloadButton(path, pdfSearchContainer);
-        }
+        // if (!window.cordova){
+        //     this.addDownloadButton(path, pdfSearchContainer);
+        // }
 
-        pdfButtons.appendChild(pdfPrevButton);
-        pdfButtons.appendChild(pdfNextButton);
+        // pdfButtons.appendChild(pdfPrevButton);
+        // pdfButtons.appendChild(pdfNextButton);
 
-        var pageCountContainer = document.createElement("div");
-        pageCountContainer.id = "page-count-container";
+        // var pageCountContainer = document.createElement("div");
+        // pageCountContainer.id = "page-count-container";
 
-        var pageName = document.createElement("span");
-        pageName.textContent = "Page ";
+        // var pageName = document.createElement("span");
+        // pageName.textContent = "Page ";
 
-        var pdfCurrentPage = document.createElement("span");
-        pdfCurrentPage.id = "pdf-current-page";
+        // var pdfCurrentPage = document.createElement("span");
+        // pdfCurrentPage.id = "pdf-current-page";
 
-        var ofText = document.createElement("span");
-        ofText.textContent = " of ";
+        // var ofText = document.createElement("span");
+        // ofText.textContent = " of ";
 
-        var pdfTotalPages = document.createElement("span");
-        pdfTotalPages.id = "pdf-total-pages";
+        // var pdfTotalPages = document.createElement("span");
+        // pdfTotalPages.id = "pdf-total-pages";
 
-        pageCountContainer.appendChild(pageName);
-        pageCountContainer.appendChild(pdfCurrentPage);
-        pageCountContainer.appendChild(ofText);
-        pageCountContainer.appendChild(pdfTotalPages);
-
-
-        pdfMetaData.appendChild(pdfButtons);
-        pdfMetaData.appendChild(pdfSearchContainer);
-        pdfMetaData.appendChild(pageCountContainer);
-
-        var pdfCanvas = document.createElement("canvas");
-        pdfCanvas.id = "pdf-canvas";
-        // pdfCanvas.width = "700";
-        // pdfCanvas.style = "maxHeight:100px";
-        // pdfCanvas.style.transform = 'scale(0.5)';
-        pdfCanvas.style.display = 'block';
-        pdfCanvas.style.margin = '0 auto';
-
-        var pageLoader = document.createElement("div");
-        pageLoader.id = "page-loader";
-        pageLoader.textContent = "Loading page ...";
+        // pageCountContainer.appendChild(pageName);
+        // pageCountContainer.appendChild(pdfCurrentPage);
+        // pageCountContainer.appendChild(ofText);
+        // pageCountContainer.appendChild(pdfTotalPages);
 
 
-        pdfContents.appendChild(pdfMetaData);
-        pdfContents.appendChild(pdfCanvas);
-        pdfContents.appendChild(pageLoader);
-        pdfContents.appendChild(pdfNoPage);
+        // pdfMetaData.appendChild(pdfButtons);
+        // pdfMetaData.appendChild(pdfSearchContainer);
+        // pdfMetaData.appendChild(pageCountContainer);
 
-        pdfMainContainer.appendChild(pdfLoader);
-        pdfMainContainer.appendChild(pdfContents);
-        pdfMainContainer.appendChild(pdfFullScreenContainer);
+        // var pdfCanvas = document.createElement("canvas");
+        // pdfCanvas.id = "pdf-canvas";
+        // // pdfCanvas.width = "700";
+        // // pdfCanvas.style = "maxHeight:100px";
+        // // pdfCanvas.style.transform = 'scale(0.5)';
+        // pdfCanvas.style.display = 'block';
+        // pdfCanvas.style.margin = '0 auto';
+
+        // var pageLoader = document.createElement("div");
+        // pageLoader.id = "page-loader";
+        // pageLoader.textContent = "Loading page ...";
 
 
-        canvasContainer.appendChild(pdfMainContainer);
+        // pdfContents.appendChild(pdfMetaData);
+        // pdfContents.appendChild(pdfCanvas);
+        // pdfContents.appendChild(pageLoader);
+        // pdfContents.appendChild(pdfNoPage);
 
-        document.getElementById(this.manifest.id).style.overflow = "auto";
+        // pdfMainContainer.appendChild(pdfLoader);
+        // pdfMainContainer.appendChild(pdfContents);
+        // pdfMainContainer.appendChild(pdfFullScreenContainer);
 
-        context.PDF_DOC = 0;
-        context.CURRENT_PAGE = 0;
-        context.TOTAL_PAGES = 0;
-        context.PAGE_RENDERING_IN_PROGRESS = 0;
-        context.CANVAS = $('#pdf-canvas').get(0);
-        context.CANVAS_CTX = context.CANVAS.getContext('2d');
 
-        console.log("CANVAS", context.CANVAS);
+        canvasContainer.innerHTML='<object type="text/html" data="./libs/web/viewer.html" ></object>';
+
+        // document.getElementById(this.manifest.id).style.overflow = "auto";
+
+        // context.PDF_DOC = 0;
+        // context.CURRENT_PAGE = 0;
+        // context.TOTAL_PAGES = 0;
+        // context.PAGE_RENDERING_IN_PROGRESS = 0;
+        // context.CANVAS = $('#pdf-canvas').get(0);
+        // context.CANVAS_CTX = context.CANVAS.getContext('2d');
+
+        // console.log("CANVAS", context.CANVAS);
 
 
         // Full Screen Icon Added
@@ -231,99 +231,99 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         // Full Screen Icon Added
 
         // Add Zoom-in and Zoom-out Icons into the toolbar
-        $("#pdf-search-container").append("<span title='Zoom in' id='able-pdf-zoomin'>" +
-                                                "<img src='assets/zoom-in.png'>" +
-                                            "</span>" +
-                                            "<span title='Zoom out' id='able-pdf-zoomout'>" +
-                                                "<img class='disabled' src='assets/zoom-out.png' style='margin-left:10px;'>" +
-                                            "</span>" +
-                                            "<span title='Reset zoom' id='able-pdf-reset-zoom'>" +
-                                                "<img class='disabled' src='assets/reset-zoom.png' style='margin-left:10px;'>" +
-                                            "</span>");
-        var adblePDFCurrentWidth = 38;
-        var adblePDFScaleFactor = 15;
-        $("#pdf-search-container").on('click','#able-pdf-zoomin',function() {
-            if(adblePDFCurrentWidth < 98) {
-                adblePDFCurrentWidth += adblePDFScaleFactor;
-                $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
-            }
-            disableIcons();
-        });
-        $("#pdf-search-container").on('click','#able-pdf-zoomout',function() {
-            if(adblePDFCurrentWidth > 38) {
-                adblePDFCurrentWidth -= adblePDFScaleFactor;
-                $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
-            }
-            disableIcons();
-        });
-        $("#pdf-search-container").on('click','#able-pdf-reset-zoom',function() {
-            if(adblePDFCurrentWidth > 38) {
-                adblePDFCurrentWidth = 38;
-                $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
-            }
-            disableIcons();
-        });
-        function disableIcons() {
-            if(adblePDFCurrentWidth > 38) {
-                $("#able-pdf-reset-zoom img").removeClass('disabled');
-            } else {
-                $("#able-pdf-reset-zoom img").addClass('disabled');
-            }
-            if(adblePDFCurrentWidth === 38) {
-                $("#able-pdf-zoomout img").addClass('disabled');
-            } else {
-                $("#able-pdf-zoomout img").removeClass('disabled');
-            }
-            if(adblePDFCurrentWidth === 98) {
-                $("#able-pdf-zoomin img").addClass('disabled');
-            } else {
-                $("#able-pdf-zoomin img").removeClass('disabled');
-            }
-        }
-        // Add Zoom-in and Zoom-out Icons into the toolbar
-        $("#pdf-find").on('click', function() {
-            var searchText = document.getElementById("pdf-find-text");
-            console.log("SEARCH TEXT", searchText.value);
-            context.logInteractEvent("TOUCH", "navigate", "TOUCH", {
-                stageId: context.CURRENT_PAGE.toString(),
-                subtype: ''
-            });
-            context.logImpressionEvent(context.CURRENT_PAGE.toString(), searchText.value);
-            context.showPage(parseInt(searchText.value));
-        });
+        // $("#pdf-search-container").append("<span title='Zoom in' id='able-pdf-zoomin'>" +
+        //                                         "<img src='assets/zoom-in.png'>" +
+        //                                     "</span>" +
+        //                                     "<span title='Zoom out' id='able-pdf-zoomout'>" +
+        //                                         "<img class='disabled' src='assets/zoom-out.png' style='margin-left:10px;'>" +
+        //                                     "</span>" +
+        //                                     "<span title='Reset zoom' id='able-pdf-reset-zoom'>" +
+        //                                         "<img class='disabled' src='assets/reset-zoom.png' style='margin-left:10px;'>" +
+        //                                     "</span>");
+        // var adblePDFCurrentWidth = 38;
+        // var adblePDFScaleFactor = 15;
+        // $("#pdf-search-container").on('click','#able-pdf-zoomin',function() {
+        //     if(adblePDFCurrentWidth < 98) {
+        //         adblePDFCurrentWidth += adblePDFScaleFactor;
+        //         $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
+        //     }
+        //     disableIcons();
+        // });
+        // $("#pdf-search-container").on('click','#able-pdf-zoomout',function() {
+        //     if(adblePDFCurrentWidth > 38) {
+        //         adblePDFCurrentWidth -= adblePDFScaleFactor;
+        //         $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
+        //     }
+        //     disableIcons();
+        // });
+        // $("#pdf-search-container").on('click','#able-pdf-reset-zoom',function() {
+        //     if(adblePDFCurrentWidth > 38) {
+        //         adblePDFCurrentWidth = 38;
+        //         $("#pdf-canvas").css('width',adblePDFCurrentWidth+'%');
+        //     }
+        //     disableIcons();
+        // });
+        // function disableIcons() {
+        //     if(adblePDFCurrentWidth > 38) {
+        //         $("#able-pdf-reset-zoom img").removeClass('disabled');
+        //     } else {
+        //         $("#able-pdf-reset-zoom img").addClass('disabled');
+        //     }
+        //     if(adblePDFCurrentWidth === 38) {
+        //         $("#able-pdf-zoomout img").addClass('disabled');
+        //     } else {
+        //         $("#able-pdf-zoomout img").removeClass('disabled');
+        //     }
+        //     if(adblePDFCurrentWidth === 98) {
+        //         $("#able-pdf-zoomin img").addClass('disabled');
+        //     } else {
+        //         $("#able-pdf-zoomin img").removeClass('disabled');
+        //     }
+        // }
+        // // Add Zoom-in and Zoom-out Icons into the toolbar
+        // $("#pdf-find").on('click', function() {
+        //     var searchText = document.getElementById("pdf-find-text");
+        //     console.log("SEARCH TEXT", searchText.value);
+        //     context.logInteractEvent("TOUCH", "navigate", "TOUCH", {
+        //         stageId: context.CURRENT_PAGE.toString(),
+        //         subtype: ''
+        //     });
+        //     context.logImpressionEvent(context.CURRENT_PAGE.toString(), searchText.value);
+        //     context.showPage(parseInt(searchText.value));
+        // });
 
-        $('#pdf-prev').on('click', function() {
-            context.logInteractEvent("TOUCH", "previous", "TOUCH", {
-                stageId: context.CURRENT_PAGE.toString()
-            });
-            context.previousNavigation();
-        });
-        $('#pdf-next').on('click', function() {
-            context.logInteractEvent("TOUCH", "next", "TOUCH", {
-                stageId: context.CURRENT_PAGE.toString()
-            });
-            context.nextNavigation();
-        });
-        this.heartBeatData.stageId = context.CURRENT_PAGE.toString();
-        context.showPDF(path, context.manifest);
+        // $('#pdf-prev').on('click', function() {
+        //     context.logInteractEvent("TOUCH", "previous", "TOUCH", {
+        //         stageId: context.CURRENT_PAGE.toString()
+        //     });
+        //     context.previousNavigation();
+        // });
+        // $('#pdf-next').on('click', function() {
+        //     context.logInteractEvent("TOUCH", "next", "TOUCH", {
+        //         stageId: context.CURRENT_PAGE.toString()
+        //     });
+        //     context.nextNavigation();
+        // });
+        // this.heartBeatData.stageId = context.CURRENT_PAGE.toString();
+        // context.showPDF(path, context.manifest);
     },
 
-    addDownloadButton: function(path, pdfSearchContainer){
-        if(!path.length) return false;
-        var instance = this;
-        var downloadBtn = document.createElement("img");
-        downloadBtn.id = "download-btn"; 
-        downloadBtn.src = "assets/icons/download.png";
-        downloadBtn.className = "pdf-download-btn";
-        downloadBtn.onclick = function(){
-            window.open(path, '_blank');
-            context.logInteractEvent("TOUCH", "Download", "TOUCH", {
-                stageId: context.CURRENT_PAGE.toString(),
-                subtype: ''
-            });
-        };
-        pdfSearchContainer.appendChild(downloadBtn);
-    },
+    // addDownloadButton: function(path, pdfSearchContainer){
+    //     if(!path.length) return false;
+    //     var instance = this;
+    //     var downloadBtn = document.createElement("img");
+    //     downloadBtn.id = "download-btn"; 
+    //     downloadBtn.src = "assets/icons/download.png";
+    //     downloadBtn.className = "pdf-download-btn";
+    //     downloadBtn.onclick = function(){
+    //         window.open(path, '_blank');
+    //         context.logInteractEvent("TOUCH", "Download", "TOUCH", {
+    //             stageId: context.CURRENT_PAGE.toString(),
+    //             subtype: ''
+    //         });
+    //     };
+    //     pdfSearchContainer.appendChild(downloadBtn);
+    // },
     nextNavigation: function() {
         if (this.sleepMode) return;
         context.logInteractEvent("TOUCH", "next", null, {
