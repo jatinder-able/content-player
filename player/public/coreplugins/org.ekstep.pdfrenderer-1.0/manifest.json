@@ -8,9 +8,9 @@
     "renderer": {
         "main": "renderer/plugin.js",
         "dependencies": [
-            {"type": "js", "src": "renderer/libs/build/pdf.js"},
-            {"type": "js", "src": "renderer/libs/web/viewer.js"},
-            {"type": "css", "src": "renderer/libs/web/viewer.css"}
+            {"type": "js", "src": "renderer/libs/pdf.js"},
+            {"type": "js", "src": "renderer/libs/compatibility.js"},
+            {"type": "css", "src": "renderer/libs/pdf.css"}
         ]
     },
     "dependencies": [
