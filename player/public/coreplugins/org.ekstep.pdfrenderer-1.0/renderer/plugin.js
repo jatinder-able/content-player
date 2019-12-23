@@ -364,7 +364,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
             // Hide the pdf loader and show pdf container in HTML
             $("#pdf-loader").hide();
             $("#pdf-contents").show();
-            context.CANVAS.height = $('#pdf-contents').height();
+            context.CANVAS.height = $('#gameArea').height();
             $("#pdf-total-pages").text(context.TOTAL_PAGES);
 
             // Show the first page
