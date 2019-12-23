@@ -180,11 +180,6 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         pdfMainContainer.appendChild(pdfLoader);
         pdfMainContainer.appendChild(pdfContents);
         pdfMainContainer.appendChild(pdfFullScreenContainer);
-        
-        var iframe = document.createElement('iframe');
-        iframe.src = './libs/viewer/web/viewer.html';
-        
-        pdfMainContainer.html(iframe);
 
 
         canvasContainer.appendChild(pdfMainContainer);
