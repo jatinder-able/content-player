@@ -182,7 +182,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         pdfMainContainer.appendChild(pdfFullScreenContainer);
 
         var iframe = document.createElement('iframe');
-        iframe.src = './libs/viewer/web/viewer.html';
+        iframe.src = './coreplugins/org.ekstep.pdfrenderer-1.0/renderer/libs/viewer/web/viewer.html';
         
         pdfMainContainer.appendChild(iframe);
 
