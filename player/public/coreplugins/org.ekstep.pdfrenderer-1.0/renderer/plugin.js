@@ -184,7 +184,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         var iframe = document.createElement('iframe');
         iframe.src = './coreplugins/org.ekstep.pdfrenderer-1.0/renderer/libs/viewer/web/viewer.html';
         
-        pdfMainContainer.html(iframe);
+        pdfMainContainer.appendChild(iframe);
 
         canvasContainer.appendChild(pdfMainContainer);
 
