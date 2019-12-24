@@ -19,6 +19,9 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         var iframe = document.createElement('iframe');
         iframe.src = path;
         instance.addToGameArea(iframe);
+        setTimeout(function() {
+            context.enableOverly();
+        }, 100);
         // this.validateSrc(path, iframe);
     },
 
@@ -30,5 +33,15 @@ org.ekstep.contentrenderer.baseLauncher.extend({
     //     EkstepRendererAPI.dispatchEvent('renderer:next:show')
     //     EkstepRendererAPI.dispatchEvent('renderer:previous:show')
     // }
+    end: function() {
+        this._super();
+    },
+    enableOverly: function () {
+        EkstepRendererAPI.dispatchEvent("renderer:overlay:show");
+        EkstepRendererAPI.dispatchEvent('renderer:stagereload:hide');
+        $('#pdf-buttons').css({
+            display: 'none'
+        });
+    },
 });
 //# sourceURL=PDFRenderer.js
