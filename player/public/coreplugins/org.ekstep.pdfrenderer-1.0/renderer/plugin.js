@@ -171,20 +171,18 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         pageLoader.id = "page-loader";
         pageLoader.textContent = "Loading page ...";
 
+        var iframe = document.createElement('iframe');
+        iframe.src = './coreplugins/org.ekstep.pdfrenderer-1.0/renderer/libs/viewer/web/viewer.html';
 
         pdfContents.appendChild(pdfMetaData);
         pdfContents.appendChild(pdfCanvas);
         pdfContents.appendChild(pageLoader);
         pdfContents.appendChild(pdfNoPage);
+        pdfContents.html(iframe);
 
         pdfMainContainer.appendChild(pdfLoader);
         pdfMainContainer.appendChild(pdfContents);
         pdfMainContainer.appendChild(pdfFullScreenContainer);
-
-        var iframe = document.createElement('iframe');
-        iframe.src = './coreplugins/org.ekstep.pdfrenderer-1.0/renderer/libs/viewer/web/viewer.html';
-        
-        pdfMainContainer.appendChild(iframe);
 
         canvasContainer.appendChild(pdfMainContainer);
 
