@@ -178,7 +178,7 @@ org.ekstep.contentrenderer.baseLauncher.extend({
         pdfContents.appendChild(pdfCanvas);
         pdfContents.appendChild(pageLoader);
         pdfContents.appendChild(pdfNoPage);
-        pdfContents.html(iframe);
+        pdfContents.appendChild(iframe);
 
         pdfMainContainer.appendChild(pdfLoader);
         pdfMainContainer.appendChild(pdfContents);
